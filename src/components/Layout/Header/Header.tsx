@@ -11,7 +11,7 @@ const Header: FC = () => {
 				<a className={styles.header__logo}>
 					<div className={styles['header__logo-img']}>
 						<Image
-							src={'/icons/pizza-logo.svg'}
+							src={`${process.env.CLIENT_URL}/icons/pizza-logo.svg`}
 							width={38}
 							height={38}
 							alt="Pizza logo"

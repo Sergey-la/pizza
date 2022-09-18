@@ -1,0 +1,29 @@
+@import '../../../../styles/variables';
+
+.categories {
+	display: flex;
+
+	li {
+		background-color: $white-line;
+		padding: 13px 30px;
+		border-radius: 30px;
+		margin-right: 10px;
+		font-family: 'ProximaNova-Bold', sans-serif;
+		font-weight: bold;
+		cursor: pointer;
+		transition: background-color $duration ease-in-out;
+
+		&:hover {
+			background-color: darken($white-line, 5%);
+		}
+
+		&:active {
+			background-color: darken($white-line, 5%);
+		}
+
+		&.active {
+			background-color: #282828;
+			color: #fff;
+		}
+	}
+}

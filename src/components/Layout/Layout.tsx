@@ -4,9 +4,11 @@ import Header from './Header/Header';
 
 const Layout: FC = ({ children }) => {
 	return (
-		<div className="container">
-			<Header />
-			<div>{children}</div>
+		<div className="wrapper">
+			<div className="container">
+				<Header />
+				<div>{children}</div>
+			</div>
 		</div>
 	);
 };

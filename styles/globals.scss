@@ -6,8 +6,17 @@
 
 body {
 	background-color: $background;
-	font-family: 'Proxima Nova', sans-serif;
-	font-weight: normal;
+	font-family: 'ProximaNova-Regular', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: 'ProximaNova-Extrabld', sans-serif;
+	font-weight: 800;
 }
 
 .wrapper {
@@ -24,6 +33,7 @@ body {
 
 	&__title {
 		margin: 35px 0;
+		font-family: 'ProximaNova-Extrabld', sans-serif;
 	}
 
 	&__items {
