@@ -1,33 +1,50 @@
 import Image from 'next/image';
-import { FC } from 'react';
+import React, { FC } from 'react';
 
 import styles from './Pizza.module.scss';
+import { IPizza } from './pizza.interface';
 
-const Pizza: FC = () => {
+const Pizza: FC<{ pizza: IPizza }> = ({ pizza }) => {
+	const [size, setSize] = React.useState(0);
+	const [type, setType] = React.useState(0);
+
 	return (
 		<div className={styles['pizza-block']}>
 			<Image
-				src="https://dodopizza-a.akamaihd.net/static/Img/Products/Pizza/ru-RU/b750f576-4a83-48e6-a283-5a8efb68c35d.jpg"
+				src={pizza.imageUrl}
 				width={250}
 				height={200}
 				className="pizza-block__image"
-				alt="Pizza"
+				alt={pizza.title}
 				draggable={false}
 			/>
-			<h4 className={styles['pizza-block__title']}>Чизбургер-пицца</h4>
+			<h4 className={styles['pizza-block__title']}>{pizza.title}</h4>
 			<div className={styles['pizza-block__selector']}>
 				<ul>
-					<li className={styles.active}>тонкое</li>
-					<li>традиционное</li>
+					{pizza.types.map((item, i) => (
+						<li
+							key={item}
+							className={i === type ? `${styles.active}` : ''}
+							onClick={() => setType(i)}
+						>
+							{item === 0 ? 'тонкое' : 'традиционное'}
+						</li>
+					))}
 				</ul>
 				<ul>
-					<li className={styles.active}>26 см.</li>
-					<li>30 см.</li>
-					<li>40 см.</li>
+					{pizza.sizes.map((item, i) => (
+						<li
+							key={i}
+							className={i === size ? `${styles.active}` : ''}
+							onClick={() => setSize(i)}
+						>
+							{item} см.
+						</li>
+					))}
 				</ul>
 			</div>
 			<div className={styles['pizza-block__bottom']}>
-				<div className={styles['pizza-block__price']}>от 395 ₽</div>
+				<div className={styles['pizza-block__price']}>от {pizza.price} ₽</div>
 				<div className="button button--outline button--add">
 					<svg
 						width="12"

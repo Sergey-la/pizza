@@ -1,13 +1,15 @@
 import React, { FC } from 'react';
 
-import Pizza from './Pizza';
+import pizzaz from '../../../../public/pizzaz.json';
 
-const Pizzaz: FC = () => {
-	const mac = [1, 2];
+import Pizza from './Pizza';
+import { PizzaList } from './pizza.interface';
+
+const Pizzaz: FC<PizzaList> = () => {
 	return (
 		<React.Fragment>
-			{mac.map(() => (
-				<Pizza />
+			{pizzaz.map((item) => (
+				<Pizza key={item.id} pizza={item} />
 			))}{' '}
 		</React.Fragment>
 	);
