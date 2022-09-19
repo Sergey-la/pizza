@@ -9,5 +9,5 @@ export interface IPizza {
 	rating: number;
 }
 export interface PizzaList {
-	pizzaz: IPizza[];
+	pizzaz?: IPizza[];
 }

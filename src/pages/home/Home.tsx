@@ -3,8 +3,9 @@ import { FC } from 'react';
 import Categories from './Categories/Categories';
 import Pizzaz from './Pizzaz/Pizzaz';
 import Sort from './Sort/Sort';
+import { IHome } from './home.interface';
 
-const Home: FC = () => {
+const Home: FC<IHome> = ({ pizzaz }) => {
 	return (
 		<div className="content container">
 			<div className="content__top">
@@ -13,7 +14,7 @@ const Home: FC = () => {
 			</div>
 			<h2 className="content__title">Все пиццы</h2>
 			<div className="content__items">
-				<Pizzaz />
+				<Pizzaz pizzaz={pizzaz} />
 			</div>
 		</div>
 	);
