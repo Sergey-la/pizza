@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import React, { FC } from 'react';
 
 import Header from './Header/Header';
 
@@ -7,7 +7,7 @@ const Layout: FC = ({ children }) => {
 		<div className="wrapper">
 			<div className="container">
 				<Header />
-				<div>{children}</div>
+				<React.Fragment>{children}</React.Fragment>
 			</div>
 		</div>
 	);

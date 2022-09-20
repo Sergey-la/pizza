@@ -1,9 +1,16 @@
 import React, { FC } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { setCategory } from 'redux/slices/filterSlices/filterSlice';
+import type { RootState } from 'redux/store';
+
 
 import styles from './Categories.module.scss';
 
 const Categories: FC = () => {
-	const [category, setCategory] = React.useState('Все');
+	const category = useSelector(
+		(state: RootState) => state.filterSlice.category
+	);
+	const dispatch = useDispatch();
 
 	const data = [
 		'Все',
@@ -20,7 +27,7 @@ const Categories: FC = () => {
 				<li
 					key={item}
 					className={item === category ? `${styles.active}` : ''}
-					onClick={() => setCategory(item)}
+					onClick={() => dispatch(setCategory(item))}
 				>
 					{item}
 				</li>
