@@ -26,4 +26,11 @@
 			color: #fff;
 		}
 	}
+
+	@media (max-width: 1395px) {
+		margin-bottom: 30px;
+		width: 100%;
+		overflow-x: auto;
+		padding-bottom: 15px;
+	}
 }

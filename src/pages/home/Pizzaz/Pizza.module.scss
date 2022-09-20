@@ -1,5 +1,10 @@
 @import '../../../../styles/variables';
 
+.pizza-wrapper {
+	display: flex;
+	justify-content: center;
+}
+
 .pizza-block {
 	width: 280px;
 	text-align: center;

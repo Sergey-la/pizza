@@ -15,7 +15,7 @@
 			margin-right: 15px;
 		}
 
-		> h1 {
+		 h1 {
 			color: $title;
 			font-size: 24px;
 			letter-spacing: 1%;
@@ -25,6 +25,22 @@
 
 		> p {
 			color: $syb-title;
+		}
+	}
+
+	@media (max-width: 630px) {
+		&__logo {
+			p {
+				font-size: 11px;
+			}
+		}
+	}
+	@media (max-width: 545px) {
+		justify-content: center;
+		&__logo {
+			h1, p {
+				display: none;
+			}
 		}
 	}
 }
