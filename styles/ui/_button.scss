@@ -149,4 +149,20 @@
 			padding: 11px 10px;
 		}
 	}
+
+	&--remove {
+		border-color: darken($color: $gray-line, $amount: 10);
+		&:hover,
+		&:active {
+			border-color: darken($color: $gray-line, $amount: 80);
+			background-color: darken($color: $gray-line, $amount: 80);
+		}
+
+		svg {
+			transform: rotate(45deg);
+			path {
+				fill: darken($color: $gray-line, $amount: 15);
+			}
+		}
+	}
 }

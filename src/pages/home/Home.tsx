@@ -7,7 +7,7 @@ import { IHome } from './home.interface';
 
 const Home: FC<IHome> = ({ pizzaz }) => {
 	return (
-		<div className="content container">
+		<div className="content">
 			<div className="content__top">
 				<Categories />
 				<Sort />
